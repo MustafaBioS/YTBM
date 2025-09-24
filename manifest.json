@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "description": "Bookmark Youtube Timestamps With YTBM (Youtube Bookmarker)",
   "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://*youtube.com/*"],
+  "host_permissions": ["https://*.youtube.com/*"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "bg.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://*youtube.com/*"],
+      "matches": ["https://*.youtube.com/*"],
       "js": ["content.js"]
     }
   ],
