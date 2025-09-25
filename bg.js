@@ -7,6 +7,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         chrome.tabs.sendMessage(tabId, {
             type: "NEW",
             videoId: urlParameters.get("v"),
-        });
+        }).catch(err => {
+      console.warn("No content script in this tab:", err);
+    });
     }
 });
