@@ -22,6 +22,10 @@
             bm.className = 'ytbtn ' + "bmbtn"
             bm.title = "Click To Bookmark The Current Timestamp"
 
+            bm.style.marginTop = '12px';
+            bm.style.width = '24px';
+            bm.style.height = '24px';
+
             youtubeLeftControls = document.getElementsByClassName("ytp-left-controls")[0];
             youtubePlayer = document.getElementsByClassName('video-stream')[0];
 
@@ -36,6 +40,8 @@
             time: currentTime,
             desc: `Bookmark At ${getTime(currentTime)}`, 
         };
+
+        console.log(newBookmark)
 
         chrome.storage.sync.set({
             [currentVideo]: JSON.stringify([...CVBM, newBookmark].sort((a, b) => a.time - b.time))
